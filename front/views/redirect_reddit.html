@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <base href="/">
+    <link id="css" rel="stylesheet" href="css/callback.css">
+</head>
+<body>
+    <div id="content">
+        <img id="banner" src="../assets/banner_svg.svg" alt="">
+        <div><p>You successfully linked your Reddit acount to Socialhub.</p><a href="/" id="homeButton" data-token={{data}} >Return home</a></div>
+    </div>
+   
+   <script>
+       let token=document.getElementById("homeButton").dataset.token
+       console.log(token);
+       localStorage.setItem("reddit",token)
+   </script>
+</body>
+</html>

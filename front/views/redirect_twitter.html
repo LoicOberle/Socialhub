@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <base href="/">
+    <link id="css" rel="stylesheet" href="css/callback.css">
+</head>
+<body>
+    <div id="content">
+    <img id="banner" src="assets/banner_svg.svg" alt="">
+   <div><p>You successfully linked your Twitter acount to Socialhub.</p><a href="/" id="homeButton" data-token={{data}} data-secret={{secret}}>Return home</a></div>
+</div>
+   <script>
+         console.log("Reddit: "+localStorage.getItem("reddit"));
+       let token=document.getElementById("homeButton").dataset.token
+       let secret=document.getElementById("homeButton").dataset.secret
+       console.log(token);
+       localStorage.setItem("twitter",token)
+       localStorage.setItem("twitterSecret",secret)
+   </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialhub</title>
+    <link rel="icon" href="assets/socialhub.png" />
+    <link id="css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/three-dots.css">
+</head>
+<body>
+    <div id="loadingElement" class=""></div>
+    <div id="app">
+        <div id="hamburger">
+            <button onclick="showAccountMenu()" id="accountButton"><div id="accountLogo"></div></button>
+            <button v-on:click="refresh" id="refreshButton"><div id="refreshLogo"></div></button>
+            <button id="hamburger_button" v-on:click="navOpen=!navOpen" ><div id="hamburgerLogo"></div></button>
+            
+           
+   
+      <nav v-show="navOpen">
+       
+          <ul class="hamburger_list">
+            <li class="hamburger_item"><a id="optionButton" href="">Settings</a></li>
+            <li class="hamburger_item"><a id='aboutButton' href="">About</a></li>
+          </ul>
+        
+      </nav>
+  
+        </div>
+    
+        <div id="posts">
+            <transition-group name="list">
+                <div class="post" v-for="(post, index) in posts" :key="index">
+                    <div class="postProfilePic" ><img class="profile_pic" :src="[post.profilePic]" alt=""></div>
+                   <div class="postAuthor" v-html="post.author"  ></div>
+                   <div class="postSubAuthor" v-html="post.subAuthor"  ></div>
+                   <div class="postDate" >{{new Date(post.date).toLocaleDateString("fr")}}</div>
+                   <div class="postIndicator" :class="[post.type]"></div>
+                   <div class="postContent" v-html="post.content"></div>
+                   <div class="postLink"><a :href="[post.link]" target="_blank">Original post</a></div>
+                </div>
+            </transition-group>
+          
+        </div>
+        <div id="TBD"></div>
+    </div>
+
+</body>
+
+<script src="https://unpkg.com/vue@3"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/spin.umd.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="js/fake_posts.js"></script>
+<script src="js/post.js"></script>
+<script src="js/localStorage.js"></script>
+<script src="js/youtube.js"></script>
+<script src="js/twitter.js"></script>
+<script src="js/reddit.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/index.js"></script>
+</html>

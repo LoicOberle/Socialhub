@@ -1,0 +1,147 @@
+body{
+    overflow-x: hidden;
+    background-color: #14171A;
+    caret-color: transparent;
+}
+
+.twitter {
+    background-color: #0084b4;
+    color: #14171A;
+}
+
+.reddit {
+    background-color: #ff4500;
+    color: #14171A;
+}
+
+.postAuthor {
+    width: 50%;
+    display: inline-block;
+    height: 20%;
+    text-align: center;
+}
+
+.postDate {
+    display: inline-block;
+    width: 25%;
+    height: 20%;
+    text-align: center;
+}
+
+.postTime {
+    display: inline-block;
+    width: 25%;
+    height: 20%;
+    text-align: center;
+}
+
+.postContent {
+    height: 80%;
+    display: inline-block;
+    width: 100%;
+
+}
+
+nav {
+    position: absolute;
+    background-color: beige;
+    text-align: center;
+    width: 10%;
+}
+
+.hamburger_list {
+    list-style: none;
+    width: 50%;
+
+}
+
+.hamburger_item {
+    text-decoration: none;
+    background-color: red;
+    margin: 1rem auto;
+    width: 100%;
+}
+
+#hamburger {
+    background-color: darkgrey;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    height: 5rem;
+    z-index: 2;
+
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+#hamburger_button {
+    background-color: inherit;
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem 1rem;
+    padding: 0px 0px;
+    padding-top: 0px;
+    border: none;
+
+}
+#hamburger_button:hover{
+transform: scale(0.9);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.posts {
+    width: 90%;
+    height: 100%;
+    z-index: 1;
+
+}
+
+.post {
+    width: 90%;
+    height: 10rem;
+    margin: 1% auto;
+}
+
+.postContent.twitter {
+    background-color: #1dcaff;
+    color: #14171A;
+}
+
+.postContent.reddit {
+    background-color: #ff5700;
+    color: #14171A;
+}
+
+.top {
+    width: 100%;
+    background-color: grey;
+    height: 20%;
+    float: left;
+    margin-bottom: 20%;
+}
+
+.middle {
+    width: 100%;
+    background-color: grey;
+    height: 20%;
+    float: left;
+}
+
+.bottom {
+    width: 100%;
+    background-color: grey;
+    height: 20%;
+    float: left;
+    margin-top: 20%;
+}
+
+.post:hover{
+    transform: scale(0.99);
+}

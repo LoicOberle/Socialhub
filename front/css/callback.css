@@ -1,0 +1,16 @@
+body{
+    background-image: url("../assets/background1.jpg");
+    background-size: cover;
+}
+#content{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#homeButton{
+    color: #FFC107;
+    text-decoration: none;
+    font-weight: bold;
+}
