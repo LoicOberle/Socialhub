@@ -33,7 +33,7 @@
         </div>
     
         <div id="posts">
-            <transition-group name="list">
+          
                 <div class="post" v-for="(post, index) in posts" :key="index">
                     <div class="postProfilePic" ><img class="profile_pic" :src="[post.profilePic]" alt=""></div>
                    <div class="postAuthor" v-html="post.author"  ></div>
@@ -43,7 +43,7 @@
                    <div class="postContent" v-html="post.content"></div>
                    <div class="postLink"><a :href="[post.link]" target="_blank">Original post</a></div>
                 </div>
-            </transition-group>
+          
           
         </div>
         <div id="TBD"></div>

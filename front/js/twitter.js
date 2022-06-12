@@ -16,7 +16,7 @@ function makeTwitterPosts(posts) {
   }
   function openTwitterLogin() {
     console.log("Reddit: "+localStorage.getItem("reddit"));
-    window.location = "https://127.0.0.1:5000/twitter/login"
+    window.location = "http://127.0.0.1:5000/twitter/login"
     //window.location="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=OXdZbUFYSHFjcnlhQWhLZ3VacnI6MTpjaQ&redirect_uri=https://127.0.0.1:5000/twitter/callback&scope=tweet.read%20users.read%20follows.read+follows.write%20offline.access&state=state&code_challenge=test&code_challenge_method=plain"
   }
     

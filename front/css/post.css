@@ -67,3 +67,12 @@ text-overflow: ellipsis;
 .post>*{
     border: 1px solid black;
 }
+
+.postIndicator{
+width: 2.5%;
+aspect-ratio: 1;
+border-radius: 50%;
+position: absolute;
+right: 0;
+top: 0;
+}

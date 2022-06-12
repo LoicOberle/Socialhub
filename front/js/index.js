@@ -125,8 +125,8 @@ Vue.createApp({
   },
   mounted:function() {
     window.addEventListener('load', () => {
-      ScrollReveal().reveal('.post', { delay: 1000000 });
-      console.log("loaded");
+     // ScrollReveal().reveal('.post', { delay: 1000000 });
+      //console.log("loaded");
  })
   },
 }).mount('#app')

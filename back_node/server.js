@@ -1,5 +1,4 @@
 const express = require('express')
-const https = require("https")
 const app = express()
 const dotenv = require("dotenv")
 const fs = require("fs")
@@ -14,14 +13,19 @@ dotenv.config({
   path: "../config.env"
 })
 let tokenS
+
+
+const host="127.0.0.1"
+const protocol="http"
+const port=5000
+
 const tw = new LoginWithTwitter({
   consumerKey: process.env.TWITTER_CONSUMER_KEY,
   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-  callbackUrl: 'https://127.0.0.1:5000/twitter/callback'
+  callbackUrl: `${protocol}://${host}:${port}/twitter/callback`
 })
 
 
-const port = process.env.PORT
 let front_path = path.join(__dirname, "..", "front")
 
 app.use(express.static(front_path))
@@ -42,7 +46,7 @@ app.get("/twitter/login", (req, res) => {
       // Handle the error your way
       console.log(err);
     }
-
+    console.log(url);
     // Save the OAuth token secret for use in your /twitter/callback route
     //req.session.tokenSecret = tokenSecret
     tokenS = tokenSecret
@@ -56,6 +60,7 @@ app.get("/twitter/login", (req, res) => {
 app.get("/twitter/callback", (req, res) => {
 
   //res.render(front_path+"/views/redirect_twitter.html",{data:req.query.oauth_token})
+  console.log(res);
   tw.callback({
     oauth_token: req.query.oauth_token,
     oauth_verifier: req.query.oauth_verifier
@@ -126,7 +131,7 @@ const simpleOAuth2Reddit = require('simple-oauth2-reddit');
 const reddit = simpleOAuth2Reddit.create({
   clientId: process.env.REDDIT_CONSUMER_KEY,
   clientSecret: process.env.REDDIT_CONSUMER_SECRET,
-  callbackURL: `https://127.0.0.1:5000/reddit/callback`,
+  callbackURL: `${protocol}://${host}:${port}/reddit/callback`,
     state: 'random-unique-string',
   scope:["identity", "edit", "flair", "history", "modconfig", "modflair", "modlog", "modposts", "modwiki", "mysubreddits", "privatemessages", "read", "report", "save", "submit", "subscribe", "vote", "wikiedit", "wikiread"]
 });
@@ -167,7 +172,7 @@ const {google} = require('googleapis');
 const oauth2Client = new google.auth.OAuth2(
   process.env.YOUTUBE_CLIENT_ID,
   process.env.YOUTUBE_CLIENT_SECRET,
-  "https://127.0.0.1:5000/youtube/callback"
+  "${protocol}://${host}:${port}/youtube/callback"
 );
 
 // generate a url that asks permissions for Blogger and Google Calendar scopes
@@ -231,7 +236,7 @@ app.get("/youtube/timeline",(req,res)=>{
 
 
 
-https
+/*https
   .createServer(
     // Provide the private and public key to the server by reading each
     // file's content with the readFileSync() method.
@@ -241,9 +246,13 @@ https
     },
     app
   )
-  .listen(5000, () => {
-    console.log("server is runing at port 5000");
+  .listen(443, () => {
+    console.log("server is runing at port 443");
   });
+  */
+ app.listen(5000, () => {
+  console.log("server is runing at port 5000");
+});
 
 
 /*

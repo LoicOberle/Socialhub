@@ -1,6 +1,8 @@
 config.env
-back_node/node_modules/
-back_php/vendor/
 key.pem
 csr.pem
 cert.pem
+Dockerfile
+.dockerignore
+.gitignore
+*node_modules*
